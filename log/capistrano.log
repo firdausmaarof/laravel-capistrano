@@ -1,0 +1,88 @@
+# Logfile created on 2016-08-08 15:39:25 +0800 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-08-08 15:39:25 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7b062cdf] Running /usr/bin/env mkdir -p /tmp as root@server.firdausmaarof.com
+ DEBUG [7b062cdf] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7b062cdf] Finished in 1.147 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-laravel-capistrano-production-fm.sh 0.0%
+  INFO Uploading /tmp/git-ssh-laravel-capistrano-production-fm.sh 100.0%
+  INFO [d50c2201] Running /usr/bin/env chmod 700 /tmp/git-ssh-laravel-capistrano-production-fm.sh as root@server.firdausmaarof.com
+ DEBUG [d50c2201] Command: /usr/bin/env chmod 700 /tmp/git-ssh-laravel-capistrano-production-fm.sh
+  INFO [d50c2201] Finished in 0.072 seconds with exit status 0 (successful).
+  INFO [99297d05] Running /usr/bin/env git ls-remote --heads https://github.com/firdausmaarof/laravel-capistrano.git as root@server.firdausmaarof.com
+ DEBUG [99297d05] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-capistrano-production-fm.sh" ; /usr/bin/env git ls-remote --heads https://github.com/firdausmaarof/laravel-capistrano.git )
+ DEBUG [99297d05] 	a12165e13decf875e8889e6749e145ca2d41abda	refs/heads/master
+  INFO [99297d05] Finished in 1.713 seconds with exit status 0 (successful).
+  INFO [3a0714db] Running /usr/bin/env mkdir -p /var/www/laravel-capistrano/shared /var/www/laravel-capistrano/releases as root@server.firdausmaarof.com
+ DEBUG [3a0714db] Command: /usr/bin/env mkdir -p /var/www/laravel-capistrano/shared /var/www/laravel-capistrano/releases
+  INFO [3a0714db] Finished in 0.114 seconds with exit status 0 (successful).
+ DEBUG [b56d9594] Running [ -f /var/www/laravel-capistrano/current/REVISION ] as root@server.firdausmaarof.com
+ DEBUG [b56d9594] Command: [ -f /var/www/laravel-capistrano/current/REVISION ]
+ DEBUG [b56d9594] Finished in 0.048 seconds with exit status 1 (failed).
+ DEBUG [397d5063] Running [ -f /var/www/laravel-capistrano/repo/HEAD ] as root@server.firdausmaarof.com
+ DEBUG [397d5063] Command: [ -f /var/www/laravel-capistrano/repo/HEAD ]
+ DEBUG [397d5063] Finished in 0.063 seconds with exit status 1 (failed).
+ DEBUG [37b1b4f5] Running if test ! -d /var/www/laravel-capistrano; then echo "Directory does not exist '/var/www/laravel-capistrano'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [37b1b4f5] Command: if test ! -d /var/www/laravel-capistrano; then echo "Directory does not exist '/var/www/laravel-capistrano'" 1>&2; false; fi
+ DEBUG [37b1b4f5] Finished in 0.056 seconds with exit status 0 (successful).
+  INFO [63d1ed59] Running /usr/bin/env git clone --mirror https://github.com/firdausmaarof/laravel-capistrano.git /var/www/laravel-capistrano/repo as root@server.firdausmaarof.com
+ DEBUG [63d1ed59] Command: cd /var/www/laravel-capistrano && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-capistrano-production-fm.sh" ; /usr/bin/env git clone --mirror https://github.com/firdausmaarof/laravel-capistrano.git /var/www/laravel-capistrano/repo )
+ DEBUG [63d1ed59] 	Cloning into bare repository '/var/www/laravel-capistrano/repo'...
+  INFO [63d1ed59] Finished in 3.450 seconds with exit status 0 (successful).
+ DEBUG [6e4b467d] Running if test ! -d /var/www/laravel-capistrano/repo; then echo "Directory does not exist '/var/www/laravel-capistrano/repo'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [6e4b467d] Command: if test ! -d /var/www/laravel-capistrano/repo; then echo "Directory does not exist '/var/www/laravel-capistrano/repo'" 1>&2; false; fi
+ DEBUG [6e4b467d] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [c9420b91] Running /usr/bin/env git remote update --prune as root@server.firdausmaarof.com
+ DEBUG [c9420b91] Command: cd /var/www/laravel-capistrano/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-capistrano-production-fm.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [c9420b91] 	Fetching origin
+  INFO [c9420b91] Finished in 1.666 seconds with exit status 0 (successful).
+ DEBUG [e0bf6d0b] Running if test ! -d /var/www/laravel-capistrano/repo; then echo "Directory does not exist '/var/www/laravel-capistrano/repo'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [e0bf6d0b] Command: if test ! -d /var/www/laravel-capistrano/repo; then echo "Directory does not exist '/var/www/laravel-capistrano/repo'" 1>&2; false; fi
+ DEBUG [e0bf6d0b] Finished in 0.071 seconds with exit status 0 (successful).
+  INFO [b18b6867] Running /usr/bin/env mkdir -p /var/www/laravel-capistrano/releases/20160808073928 as root@server.firdausmaarof.com
+ DEBUG [b18b6867] Command: cd /var/www/laravel-capistrano/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-capistrano-production-fm.sh" ; /usr/bin/env mkdir -p /var/www/laravel-capistrano/releases/20160808073928 )
+  INFO [b18b6867] Finished in 0.095 seconds with exit status 0 (successful).
+  INFO [570465b2] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/laravel-capistrano/releases/20160808073928 as root@server.firdausmaarof.com
+ DEBUG [570465b2] Command: cd /var/www/laravel-capistrano/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-capistrano-production-fm.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/laravel-capistrano/releases/20160808073928 )
+  INFO [570465b2] Finished in 0.141 seconds with exit status 0 (successful).
+ DEBUG [673a8821] Running if test ! -d /var/www/laravel-capistrano/repo; then echo "Directory does not exist '/var/www/laravel-capistrano/repo'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [673a8821] Command: if test ! -d /var/www/laravel-capistrano/repo; then echo "Directory does not exist '/var/www/laravel-capistrano/repo'" 1>&2; false; fi
+ DEBUG [673a8821] Finished in 0.065 seconds with exit status 0 (successful).
+ DEBUG [ee9dca55] Running /usr/bin/env git rev-list --max-count=1 master as root@server.firdausmaarof.com
+ DEBUG [ee9dca55] Command: cd /var/www/laravel-capistrano/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-capistrano-production-fm.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [ee9dca55] 	a12165e13decf875e8889e6749e145ca2d41abda
+ DEBUG [ee9dca55] Finished in 0.152 seconds with exit status 0 (successful).
+ DEBUG [403877a6] Running if test ! -d /var/www/laravel-capistrano/releases/20160808073928; then echo "Directory does not exist '/var/www/laravel-capistrano/releases/20160808073928'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [403877a6] Command: if test ! -d /var/www/laravel-capistrano/releases/20160808073928; then echo "Directory does not exist '/var/www/laravel-capistrano/releases/20160808073928'" 1>&2; false; fi
+ DEBUG [403877a6] Finished in 0.066 seconds with exit status 0 (successful).
+  INFO [0e90769c] Running /usr/bin/env echo "a12165e13decf875e8889e6749e145ca2d41abda" >> REVISION as root@server.firdausmaarof.com
+ DEBUG [0e90769c] Command: cd /var/www/laravel-capistrano/releases/20160808073928 && /usr/bin/env echo "a12165e13decf875e8889e6749e145ca2d41abda" >> REVISION
+  INFO [0e90769c] Finished in 0.073 seconds with exit status 0 (successful).
+ DEBUG [e19606a7] Running if test ! -d /var/www/laravel-capistrano/releases/20160808073928; then echo "Directory does not exist '/var/www/laravel-capistrano/releases/20160808073928'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [e19606a7] Command: if test ! -d /var/www/laravel-capistrano/releases/20160808073928; then echo "Directory does not exist '/var/www/laravel-capistrano/releases/20160808073928'" 1>&2; false; fi
+ DEBUG [e19606a7] Finished in 0.081 seconds with exit status 0 (successful).
+  INFO [92396daf] Running /usr/bin/env composer install --no-dev --quiet as root@server.firdausmaarof.com
+ DEBUG [92396daf] Command: cd /var/www/laravel-capistrano/releases/20160808073928 && /usr/bin/env composer install --no-dev --quiet
+ DEBUG [92396daf] 	Generating optimized class loader
+ DEBUG [92396daf] 	Compiling common classes
+  INFO [92396daf] Finished in 76.361 seconds with exit status 0 (successful).
+  INFO [6082f389] Running /usr/bin/env chmod u+x artisan as root@server.firdausmaarof.com
+ DEBUG [6082f389] Command: cd /var/www/laravel-capistrano/releases/20160808073928 && /usr/bin/env chmod u+x artisan
+  INFO [6082f389] Finished in 0.099 seconds with exit status 0 (successful).
+  INFO [f3f9230c] Running /usr/bin/env ln -s /var/www/laravel-capistrano/releases/20160808073928 /var/www/laravel-capistrano/releases/current as root@server.firdausmaarof.com
+ DEBUG [f3f9230c] Command: /usr/bin/env ln -s /var/www/laravel-capistrano/releases/20160808073928 /var/www/laravel-capistrano/releases/current
+  INFO [f3f9230c] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [7988c821] Running /usr/bin/env mv /var/www/laravel-capistrano/releases/current /var/www/laravel-capistrano as root@server.firdausmaarof.com
+ DEBUG [7988c821] Command: /usr/bin/env mv /var/www/laravel-capistrano/releases/current /var/www/laravel-capistrano
+  INFO [7988c821] Finished in 0.062 seconds with exit status 0 (successful).
+ DEBUG [ca0d859f] Running /usr/bin/env ls -xtr /var/www/laravel-capistrano/releases as root@server.firdausmaarof.com
+ DEBUG [ca0d859f] Command: /usr/bin/env ls -xtr /var/www/laravel-capistrano/releases
+ DEBUG [ca0d859f] 	20160808073928
+ DEBUG [ca0d859f] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [12e8f5a7] Running if test ! -d /var/www/laravel-capistrano/releases; then echo "Directory does not exist '/var/www/laravel-capistrano/releases'" 1>&2; false; fi as root@server.firdausmaarof.com
+ DEBUG [12e8f5a7] Command: if test ! -d /var/www/laravel-capistrano/releases; then echo "Directory does not exist '/var/www/laravel-capistrano/releases'" 1>&2; false; fi
+ DEBUG [12e8f5a7] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO [4cbfc0f1] Running /usr/bin/env echo "Branch master (at a12165e13decf875e8889e6749e145ca2d41abda) deployed as release 20160808073928 by fm" >> /var/www/laravel-capistrano/revisions.log as root@server.firdausmaarof.com
+ DEBUG [4cbfc0f1] Command: cd /var/www/laravel-capistrano/releases && /usr/bin/env echo "Branch master (at a12165e13decf875e8889e6749e145ca2d41abda) deployed as release 20160808073928 by fm" >> /var/www/laravel-capistrano/revisions.log
+  INFO [4cbfc0f1] Finished in 0.058 seconds with exit status 0 (successful).

@@ -35,8 +35,8 @@ lock '3.6.0'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :application, "Laravel Capistrano"  # EDIT your app name
-set :repo_url,  "https://github.com/laravel/laravel.git" # EDIT your git repository
+set :application, "laravel-capistrano"  # EDIT your app name
+set :repo_url,  "https://github.com/firdausmaarof/laravel-capistrano.git" # EDIT your git repository
 set :deploy_to, "/var/www/laravel-capistrano" # EDIT folder where files should be deployed to
  
 namespace :deploy do
